@@ -393,7 +393,7 @@ export const getStaticPaths = async () => {
        }
       }`;
     const posts = await sanityClient.fetch(query);
-    const paths = posts.map((post: Post) => ({
+    const paths = posts.map((post) => ({
         params: {
             slug: post.slug.current,
         },
