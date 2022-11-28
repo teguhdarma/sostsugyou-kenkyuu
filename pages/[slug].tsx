@@ -25,10 +25,8 @@ interface IFormInput {
     comment: string;
 }
 
-interface Props {
-    post: Post;
-}
-function Post({ post }: Props) {
+
+function Post({ post }) {
 
 
 
