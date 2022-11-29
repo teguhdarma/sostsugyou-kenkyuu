@@ -15,7 +15,7 @@ function maps({ map, posts }) {
     <div>
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
-          <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
+          {/* <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
             <Link a href={`/post/Carausel`}>
               <p className="button  hover:text-white hover:bg-sky-500 hover:ring-sky-500">
                 all
@@ -34,7 +34,7 @@ function maps({ map, posts }) {
             <p className="button  hover:text-white hover:bg-sky-500 hover:ring-sky-500">
               More filters
             </p>
-          </div>
+          </div> */}
           {/* render info card */}
           <div>
             {posts.map((post) => (

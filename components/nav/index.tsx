@@ -28,6 +28,12 @@ const TOPICS = [
         path: "/topics/sports",
         title: "Sports",
     },
+    {
+        icon: "07",
+        path: "/topics/health",
+        title: "health",
+    },
+
 ];
 
 const Nav: React.FC = () => {
@@ -38,7 +44,6 @@ const Nav: React.FC = () => {
                     return (
                         <li key={index} >
                             <Link href={`${topic.path}`}>
-
                                 <span>
                                     <Image
                                         src={`/img/navIcons/${topic.icon}.png`}
@@ -51,7 +56,6 @@ const Nav: React.FC = () => {
                                     />
                                 </span>
                                 <span>{topic.title}</span>
-
                             </Link>
                         </li>
                     );
