@@ -10,35 +10,32 @@ export default function Home(props) {
     console.log(props);
 
     return (
-        <MainLayout>
-            <Head>
-                <title>Simple News</title>
-            </Head>
-            <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+
+        <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
 
 
-                    <nav>
-                        <div className="flex justify-center ">
-                            <Nav />
-                        </div>
-
-                    </nav>
-
-
-                    <div className="flex justify-center col-span-2 ">
-                        <Article title="headline" articles={props.topArticles} />
-                    </div>
-                    <div className={styles.aside}>
-                        <div className="flex justify-center ">
-                            <PickupArticle articles={props.pickupArticles} />
-                        </div>
+                <nav>
+                    <div className="flex justify-center ">
+                        <Nav />
                     </div>
 
+                </nav>
 
-                </div >
+
+                <div className="flex justify-center col-span-2 ">
+                    <Article title="headline" articles={props.topArticles} />
+                </div>
+                <div className={styles.aside}>
+                    <div className="flex justify-center ">
+                        <PickupArticle articles={props.pickupArticles} />
+                    </div>
+                </div>
+
+
             </div >
-        </MainLayout>
+        </div >
+
     );
 
 }

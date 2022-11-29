@@ -39,16 +39,7 @@ const Goaltracker = () => {
   return (
     <div className="">
       <div className=" w-full flex items-center flex-col pt-3">
-        <h1 className=" text-3xl font-medium">Goaltracker</h1>
-        <button
-          // toggle add new task
-          className=" px-6 py-2 text-white bg-blue-600 rounded-sm z-10 mt-3"
-          onClick={() => {
-            setVisible(!visible);
-          }}
-        >
-          {visible ? 'Close' : 'Add new Goal'}
-        </button>
+        <h1 className=" text-3xl font-medium">check list</h1>
       </div>
       <div className=" h-full relative flex w-full flex-col items-center pt-12">
         {/* goals display */}

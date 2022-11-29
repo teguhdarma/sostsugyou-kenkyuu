@@ -1,39 +1,46 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 import Article from '../../components/article'
 import Nav from '../../components/nav'
-import MainLayout from "../../layouts/index";
-import styles from "../../styles/Home.module.scss";
+import { Dna } from 'react-loader-spinner'
+
+
 
 function Topic(props) {
     const router = useRouter();
     if (router.isFallback) {
-        return <div>Loading...</div>;
+        return <div className="flex justify-center mt-52 ">
+            <Dna
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+            />
+        </div>;
     }
 
     return (
-        <MainLayout>
-            <Head>
-                <title >Simple News</title>
-            </Head>
-            <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-
-                    <nav>
-                        <div className="flex justify-center ">
-                            <Nav />
-                        </div>
-                    </nav>
 
 
-                    <div className="w-auto col-span-2 ">
-                        <div className="flex justify-center ">
-                            <Article title={props.title} articles={props.topicArticles} />
-                        </div>
+        <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+
+                <nav>
+                    <div className="flex justify-center ">
+                        <Nav />
+                    </div>
+                </nav>
+
+
+                <div className="w-auto col-span-2 ">
+                    <div className="flex justify-center ">
+                        <Article title={props.title} articles={props.topicArticles} />
                     </div>
                 </div>
-            </div >
-        </MainLayout >
+            </div>
+        </div >
+
     );
 }
 
