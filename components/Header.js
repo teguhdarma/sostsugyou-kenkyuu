@@ -1,24 +1,11 @@
-import Image from 'next/image';
-
-import {
-  GlobeAltIcon,
-  MenuIcon,
-  SearchIcon,
-  UserCircleIcon,
-  UserIcon,
-} from '@heroicons/react/solid';
 import { useState } from 'react';
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRangePicker } from 'react-date-range';
+
 import { useRouter } from 'next/router';
 
 function Header({ placeholder }) {
   // kalender
   const [searchInput, setSearchInput] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [noOfGuests, setNoOfGuest] = useState(1);
+
   const router = useRouter();
 
   const search = () => {
@@ -26,25 +13,12 @@ function Header({ placeholder }) {
       pathname: '/maps',
       query: {
         location: searchInput,
-        startDate: startDate.toISOString(),
-        endDate: endDate.toISOString(),
-        noOfGuests,
       },
     });
   };
 
-  const handleSelect = (ranges) => {
-    setStartDate(ranges.selection.startDate);
-    setEndDate(ranges.selection.endDate);
-  };
-
   const resetInput = () => {
     setSearchInput('');
-  };
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key: 'selection',
   };
 
   return (
