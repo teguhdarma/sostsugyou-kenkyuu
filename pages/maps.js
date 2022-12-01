@@ -1,41 +1,21 @@
 import React from 'react';
-
-// import { useRouter } from 'next/router';
-// import format from 'date-fns/format';
-// import Pagination from '../components/Pagination';
-// import App from '../components/Map';
+import Header from '../components/Header';
+import { useRouter } from 'next/router';
 import { sanityClient, urlFor } from '../sanity';
 import App from '../components/Map';
 import Link from 'next/link';
 
-function maps({ map, posts }) {
+function maps({ posts }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  const Router = useRouter();
+  console.log(posts);
+
+  const { location, noOfGuests } = Router.query;
 
   return (
     <div>
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
-          {/* <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
-            <Link a href={`/post/Carausel`}>
-              <p className="button  hover:text-white hover:bg-sky-500 hover:ring-sky-500">
-                all
-              </p>
-            </Link>
-            <Link a href={`/Type`}>
-              <p className="button hover:text-white hover:bg-sky-500 hover:ring-sky-500">
-                type of place
-              </p>
-            </Link>
-
-            <p className="button hover:text-white hover:bg-sky-500 hover:ring-sky-500">
-              price
-            </p>
-
-            <p className="button  hover:text-white hover:bg-sky-500 hover:ring-sky-500">
-              More filters
-            </p>
-          </div> */}
-          {/* render info card */}
           <div>
             {posts.map((post) => (
               <Link key={post._id} href={`/${post.slug.current}`}>
@@ -108,9 +88,9 @@ function maps({ map, posts }) {
 
 export default maps;
 
-export async function getServerSideProps() {
-  const query = `*[_type == "post" ]{
-    _id,
+export async function getServerSideProps(context) {
+  const location = context.query.location;
+  const query = `*[_type == "post" && location->title == $location]{
     title,
     author->{
     name,image
@@ -134,15 +114,11 @@ export async function getServerSideProps() {
   
   
   }`;
+  const params = { location: location };
+  const posts = await sanityClient.fetch(query, params);
 
-  const posts = await sanityClient.fetch(query);
-
-  const map = await fetch(
-    'https://api.mapbox.com/directions/v5/mapbox/driving/11.59838875578771,48.1498484882143;11.646071564986642,48.157168731123306.json?overview=false&engine=electric&ev_initial_charge=600&ev_max_charge=50000&ev_connector_types=ccs_combo_type1,ccs_combo_type2&energy_consumption_curve=0,300;20,160;80,140;120,180&ev_charging_curve=0,100000;40000,70000;60000,30000;80000,10000&ev_min_charge_at_charging_station=1&access_token=pk.eyJ1IjoidGVndWhkYXJtYSIsImEiOiJja3psNjRneWsxNHQ1Mm5ueXh2dThpY2xuIn0.EOP9mO-H8NKTAW6jcvX7KQ'
-  ).then((res) => res.json());
   return {
     props: {
-      map,
       posts,
     },
   };

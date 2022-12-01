@@ -24,6 +24,7 @@ export default function GeocoderControl(prop) {
           prop.setMarkerPin({ longitude: location[0], latitude: location[1] });
         }
       });
+      console.log(location);
       ctrl.on('error', noop);
       return ctrl;
     },

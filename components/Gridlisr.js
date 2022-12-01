@@ -45,7 +45,7 @@ function Gridlisr() {
           </p>
         </div>
       </Link>
-      <Link href="/maps">
+      <Link href="/Search">
         <div class="p-10 flex flex-col items-center text-center group   md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
           <span class="p-5 rounded-full bg-lime-500 text-white shadow-lg shadow-lime-200">
             <img src="img/indexicon/map.png" alt="" className="w-10 h-10" />

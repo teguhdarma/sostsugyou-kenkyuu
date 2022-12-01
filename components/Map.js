@@ -1,7 +1,4 @@
 import * as React from 'react';
-import GeocoderControl from './GeocoderControl';
-import MarkerPin from './MarkerPin';
-
 import { getCenter } from 'geolib';
 import Map, {
   Marker,
@@ -12,47 +9,15 @@ import Map, {
   AttributionControl,
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
-
 import { useState } from 'react';
 import { sanityClient, urlFor } from '../sanity';
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 const MAPBOX_TOKEN =
-  'pk.eyJ1IjoidGVndWhkYXJtYSIsImEiOiJja3psNjRneWsxNHQ1Mm5ueXh2dThpY2xuIn0.EOP9mO-H8NKTAW6jcvX7KQ';
-// Set your mapbox token here
-const MapboxTraffic = require('@mapbox/mapbox-gl-traffic');
+  'pk.eyJ1IjoidGVndWhkYXJtYSIsImEiOiJja3psNjRneWsxNHQ1Mm5ueXh2dThpY2xuIn0.EOP9mO-H8NKTAW6jcvX7KQ'; // Set your mapbox token here
 
-export default function App({ posts, prop }) {
-  console.log(prop);
-  //marker
-  const [markerPin, setMarkerPin] = useState({
-    latitude: prop?.initialGeographicPoint?.latitude,
-    longitude: prop?.initialGeographicPoint?.longitude,
-  });
-  function onDragEnd(e) {
-    const viewState = e.viewState;
-    if (viewState) {
-      setMarkerPin({
-        latitude: viewState.latitude,
-        longitude: viewState.longitude,
-      });
-    }
-  }
-
-  function onLoadMap(e) {
-    const map = e?.target;
-    if (map) {
-      // 言語設定
-      const language = new MapboxLanguage({
-        defaultLanguage: 'ja',
-      });
-      map.addControl(language);
-      language._initialStyleUpdate();
-    }
-  }
-
+export default function App({ posts }) {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
@@ -111,15 +76,13 @@ export default function App({ posts, prop }) {
     <div>
       <Map
         initialViewState={{
-          latitude: markerPin.latitude,
-          longitude: markerPin.longitude,
+          latitude: center.latitude,
+          longitude: center.longitude,
           zoom: 11,
         }}
         style={{ width: 600, height: '100%' }}
         mapStyle="mapbox://styles/teguhdarma/ckzl67xvt000q15qmhvsxh85j"
         mapboxAccessToken={MAPBOX_TOKEN}
-        onDragEnd={onDragEnd}
-        onLoad={onLoadMap}
       >
         {posts.map((result) => (
           <div key={result.long}>
@@ -157,7 +120,6 @@ export default function App({ posts, prop }) {
                 </svg>
               </p>
             </Marker>
-
             {selectedLocation.long === result.long ? (
               <Popup
                 onClose={() => setSelectedLocation({})}
@@ -165,7 +127,6 @@ export default function App({ posts, prop }) {
                 offsetTop={-30}
                 latitude={result.lang}
                 longitude={result.long}
-                attributionControl={false}
               >
                 <section>
                   <div className="w-40 h-30 carousel my-1  mx-auto">
@@ -244,7 +205,7 @@ export default function App({ posts, prop }) {
                   </div>
                 </section>
                 {/* <img className='h-30 w-40 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(result.mainImage)} alt="" /> */}
-                <Link key={result._id} href={`/${result.slug.current}`}>
+                <Link key={result._id} href={`/post/${result.slug.current}`}>
                   {result.title}
                 </Link>
               </Popup>
@@ -255,7 +216,6 @@ export default function App({ posts, prop }) {
         ))}
         <FullscreenControl />
         <NavigationControl />
-        <GeocoderControl setMarkerPin={setMarkerPin} position="top-left" />
         <ScaleControl />
       </Map>
     </div>
