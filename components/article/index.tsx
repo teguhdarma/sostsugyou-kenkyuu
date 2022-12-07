@@ -25,7 +25,6 @@ const Article: React.FC<Props> = ({ articles, title }) => {
                             </div>
 
                             {article.urlToImage && (
-
                                 <img
                                     key={index}
                                     src={article.urlToImage}

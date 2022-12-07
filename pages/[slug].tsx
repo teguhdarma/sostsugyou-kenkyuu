@@ -1,13 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { useState } from "react";
-
-
-
-
-import Map, { Marker } from "react-map-gl";
 import { useRef, useEffect } from 'react';
 import { sanityClient, urlFor } from "../sanity";
-
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -412,10 +406,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         name,
         image
       },
-      'comments': *[
-          _type == "comment"&&
-          post._ref == ^._id 
-          ],
       description,
       mainImage,
       mainImage2,
@@ -431,7 +421,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       lang,
       slug,
       body,
-      alamat
+      alamat,
 
     }`;
     const post = await sanityClient.fetch(query, {

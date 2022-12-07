@@ -16,7 +16,7 @@ function Gridlisr() {
           </p>
         </div>
       </Link>
-      <Link href="https://kaji.vercel.app/">
+      <Link href="https://kaji-maru-batsu.vercel.app/">
         <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
           <span class="p-5 rounded-full bg-orange-500 text-white shadow-lg shadow-orange-200">
             <img src="img/indexicon/quiz.png" alt="" className="w-10 h-10" />
