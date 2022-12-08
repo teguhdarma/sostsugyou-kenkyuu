@@ -1,16 +1,15 @@
 import React from 'react';
-import Header from '../components/Header';
 import { useRouter } from 'next/router';
 import { sanityClient, urlFor } from '../sanity';
 import App from '../components/Map';
 import Link from 'next/link';
 
-function maps({ posts }) {
+function maps({ map, posts }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const Router = useRouter();
   console.log(posts);
 
-  const { location, noOfGuests } = Router.query;
+  const { location } = Router.query;
 
   return (
     <div>
@@ -40,7 +39,7 @@ function maps({ posts }) {
 
                     <div className="flex justify-between items-end py-3 ">
                       <p className="flex items-center">
-                        <p className="text-blue-500">lihat lebih</p>
+                        <p className="text-blue-500">もっとみる</p>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5 text-blue-500"
@@ -63,9 +62,6 @@ function maps({ posts }) {
                       </p>
 
                       <div>
-                        <p className="text-lg lg:text-2xl font-semibold pb-2 text-blue-400">
-                          {post.price}
-                        </p>
                         <p className="text-right font-extralight">
                           {post.author.name}
                         </p>
@@ -117,8 +113,12 @@ export async function getServerSideProps(context) {
   const params = { location: location };
   const posts = await sanityClient.fetch(query, params);
 
+  const map = await fetch(
+    'https://api.mapbox.com/geocoding/v5/mapbox.places/.json?types=place%2Cpostcode%2Caddress&access_token=pk.eyJ1IjoidGVndWhkYXJtYSIsImEiOiJja3psNjRneWsxNHQ1Mm5ueXh2dThpY2xuIn0.EOP9mO-H8NKTAW6jcvX7KQ'
+  ).then((res) => res.json());
   return {
     props: {
+      map,
       posts,
     },
   };

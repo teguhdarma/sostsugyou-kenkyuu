@@ -4,8 +4,7 @@ import { useRef, useEffect } from 'react';
 import { sanityClient, urlFor } from "../sanity";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Swal from "sweetalert2";
-import { Post } from "../typings";
+
 
 
 
@@ -19,11 +18,9 @@ interface IFormInput {
     email: string;
     comment: string;
 }
-interface Props {
-    post: Post;
-}
 
-function Post({ post }: Props) {
+
+function Post({ post }) {
 
 
 
@@ -107,18 +104,6 @@ function Post({ post }: Props) {
     } = useForm<IFormInput>();
     console.log(post);
 
-    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-        fetch("/api/createComment", { method: "POST", body: JSON.stringify(data) })
-            .then(() => {
-                console.log(data);
-                setSubmitted(true);
-                Swal.fire("terima kasih!", "sudah terkirim!", "success");
-            })
-            .catch((err) => {
-                console.log(err);
-                setSubmitted(false);
-            });
-    };
 
     return (
         <main>
@@ -390,7 +375,7 @@ export const getStaticPaths = async () => {
        }
       }`;
     const posts = await sanityClient.fetch(query);
-    const paths = posts.map((post: Post) => ({
+    const paths = posts.map((post) => ({
         params: {
             slug: post.slug.current,
         },
@@ -409,7 +394,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         name,
         image
       },
-      
+      'comments': *[
+          _type == "comment"&&
+          post._ref == ^._id 
+          ],
       description,
       mainImage,
       mainImage2,
@@ -439,6 +427,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             post,
+
         },
 
         revalidate: 10, // after 60 second , itll update the old cached version

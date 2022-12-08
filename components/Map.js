@@ -182,7 +182,7 @@ export default function App({ posts }) {
                         <div className="relative h-24 w-40 md:h-24 md:w-30 flex-shrink-0 hover:scale-105 transform transition duration-300 ease-out">
                           <img
                             className="h-30 w-40 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
-                            src={urlFor(result.fasilitas.image)}
+                            src={urlFor(result.mainImage)}
                             alt=""
                           />
                         </div>
@@ -208,6 +208,8 @@ export default function App({ posts }) {
                 <Link key={result._id} href={`/post/${result.slug.current}`}>
                   {result.title}
                 </Link>
+                <br />
+                <a href={result.price}>ご案内を見る</a>
               </Popup>
             ) : (
               false
