@@ -6,7 +6,7 @@ import Link from 'next/link';
 function Slide({ product: { image, title } }) {
   return (
     <div>
-      <Link href={`/product/${title.current}`}>
+      <Link href={`/category/${title}`}>
         <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out scrollbar-hide ">
           <div className="relative h-80 w-80  scrollbar-hide">
             <img
