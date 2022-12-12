@@ -1,10 +1,10 @@
 import Script from 'next/script';
-import Gridlisr from '../components/Gridlisr';
+import Banner from '../components/Banner';
 
 export default function App() {
   return (
     <div>
-      <Gridlisr />
+      <Banner />
       <div>
         <div>
           <Script src="/chatwoot.js" />

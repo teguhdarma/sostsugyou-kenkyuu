@@ -49,6 +49,7 @@
     "react-state-context": "^0.0.1",
     "react-static-context": "^1.7.1",
     "react-top-loading-bar": "^2.3.1",
+    "react-typed": "^1.2.0",
     "sass": "^1.56.1",
     "snyk": "^1.1056.0",
     "sweetalert2": "^11.6.8",

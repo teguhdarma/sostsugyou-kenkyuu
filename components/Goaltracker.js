@@ -4,7 +4,7 @@ const Goaltracker = () => {
   const [visible, setVisible] = useState(false);
   let goalarray = useMemo(() => {
     return [
-      ['Be an Athlete', ['dance', 'run', 'jump']],
+      ['持ち物', ['水', 'run', 'jump']],
       ['Get good grades', ['read', 'study', 'attend classes']],
     ];
   }, []);

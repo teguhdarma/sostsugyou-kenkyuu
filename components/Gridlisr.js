@@ -76,16 +76,21 @@ function Gridlisr() {
           </p>
         </div>
       </Link>
-
-      <div class="p-10 flex flex-col items-center text-center group hover:bg-slate-50 cursor-pointer">
-        <span class="p-5 rounded-full bg-purple-500 text-white shadow-lg shadow-indigo-200">
-          <img src="img/indexicon/instagram.png" alt="" className="w-10 h-10" />
-        </span>
-        <p class="text-xl font-medium text-slate-700 mt-3">インスタ</p>
-        <p class="mt-2 text-sm text-slate-500">
-          Visa process by helping you create the necessary documentation
-        </p>
-      </div>
+      <Link href="https://social-media-7bum.vercel.app/">
+        <div class="p-10 flex flex-col items-center text-center group hover:bg-slate-50 cursor-pointer">
+          <span class="p-5 rounded-full bg-purple-500 text-white shadow-lg shadow-indigo-200">
+            <img
+              src="img/indexicon/instagram.png"
+              alt=""
+              className="w-10 h-10"
+            />
+          </span>
+          <p class="text-xl font-medium text-slate-700 mt-3">インスタ</p>
+          <p class="mt-2 text-sm text-slate-500">
+            Visa process by helping you create the necessary documentation
+          </p>
+        </div>
+      </Link>
     </div>
   );
 }
