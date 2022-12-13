@@ -4,8 +4,8 @@ const Goaltracker = () => {
   const [visible, setVisible] = useState(false);
   let goalarray = useMemo(() => {
     return [
-      ['持ち物', ['水', 'run', 'jump']],
-      ['Get good grades', ['read', 'study', 'attend classes']],
+      ['食べ物', ['飲料水', '食料', '薬類']],
+      ['品物', ['装備品', '防寒具', '貴重品']],
     ];
   }, []);
 
@@ -40,6 +40,7 @@ const Goaltracker = () => {
     <div className="">
       <div className=" w-full flex items-center flex-col pt-3">
         <h1 className=" text-3xl font-medium">check list</h1>
+        <h1 className=" text-3xl font-medium">持ち物</h1>
       </div>
       <div className=" h-full relative flex w-full flex-col items-center pt-12">
         {/* goals display */}
@@ -48,9 +49,7 @@ const Goaltracker = () => {
             return (
               <div className=" w-1/2 px-5 py-2 shadow-md mb-8" key={index}>
                 <h1 className="text-2xl font-medium">
-                  {goal[1].length > 0
-                    ? goal[0]
-                    : `Hurray, Goal ${goal[0]} Achieved`}
+                  {goal[1].length > 0 ? goal[0] : `準備を完了`}
                 </h1>
                 <div className="">
                   {goal[1].map((task, index2) => {

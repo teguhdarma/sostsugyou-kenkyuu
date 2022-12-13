@@ -18,8 +18,7 @@ function Banner() {
         }}
       >
         <ambientLight intensity={1.25} />
-        <ambientLight intensity={0.1} />
-        <directionalLight intensity={0.4} />
+
         <Suspense fallback={null}>
           <Tokyo position={[0.025, -0.1, 0]} />
         </Suspense>
@@ -31,9 +30,9 @@ function Banner() {
             <HomeIcon className="hidden md:inline-flex h-8 bg-blue-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
             <Typed
               strings={[
-                'Selamat datang di re:on',
-                'tempat mencari kos ',
-                'temukan tempat nyaman',
+                'ディザプロにようこそ',
+                'これは災害予防アプリです',
+                '楽に避難したい方のため',
               ]}
               typeSpeed={40}
               backSpeed={50}

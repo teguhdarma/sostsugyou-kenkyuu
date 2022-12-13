@@ -11,8 +11,7 @@ function Gridlisr() {
           </span>
           <p class="text-xl font-medium text-slate-700 mt-3">ウェブサイト</p>
           <p class="mt-2 text-sm text-slate-500">
-            Team BrainEdge education is a bunch of highly focused, energetic set
-            of people.
+            火事を未然に防ぐための情報をまとめた情報掲載ページです。自分の命や財産を守れるように意識を変えることができます。
           </p>
         </div>
       </Link>
@@ -23,8 +22,7 @@ function Gridlisr() {
           </span>
           <p class="text-xl font-medium text-slate-700 mt-3">クイズ</p>
           <p class="mt-2 text-sm text-slate-500">
-            Know where you stand and what next to do to
-            succeeaaaaaaaaaaaaaaaaaaaaaa .
+            火災、地震、津波の予備知識をつけてもらって、いざ、災害が起きてしまった時にスムーズに避難ができるようにする
           </p>
         </div>
       </Link>
@@ -40,8 +38,7 @@ function Gridlisr() {
 
           <p class="text-xl font-medium text-slate-700 mt-3">ニュース</p>
           <p class="mt-2 text-sm text-slate-500">
-            Professional Advice for higher education abroad and select the top
-            institutions worldwide.
+            災害時にテレビ等から情報が入手しにくい状況でも社会の出来事について知ることができるようにする
           </p>
         </div>
       </Link>
@@ -54,8 +51,7 @@ function Gridlisr() {
           <p class="text-xl font-medium text-slate-700 mt-3">避難場所</p>
 
           <p class="mt-2 text-sm text-slate-500">
-            Yet another year ! Yet another jewel in our crown! Yet another year
-            ! Yet another jewel in our crown!
+            避難場所の情報をマップと合わせて災害のカテゴリーと県を入力するとその県の避難場所の情報を確認することができます。
           </p>
         </div>
       </Link>
@@ -68,11 +64,9 @@ function Gridlisr() {
               className="w-10 h-10"
             />
           </span>
-
           <p class="text-xl font-medium text-slate-700 mt-3">チェックリスト</p>
           <p class="mt-2 text-sm text-slate-500">
-            Get Topic-Wise Tests, Section- Wise and mock tests for your
-            preparation.
+            災害への予防がメインの【ディザプロ】アプリですが災害が起こってしまった場合の避難時に忘れ物がないようにするため
           </p>
         </div>
       </Link>
@@ -87,7 +81,8 @@ function Gridlisr() {
           </span>
           <p class="text-xl font-medium text-slate-700 mt-3">インスタ</p>
           <p class="mt-2 text-sm text-slate-500">
-            Visa process by helping you create the necessary documentation
+            火事を未然に防ぐための知識をSNSを投稿を用いて
+            拡散することでより多くの人に火事についての意識を変えてもらう
           </p>
         </div>
       </Link>
