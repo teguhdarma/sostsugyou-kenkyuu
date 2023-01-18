@@ -24,7 +24,7 @@ export default function Home(props) {
 
 
                 <div className="flex justify-center col-span-2 ">
-                    <Article title="headline" articles={props.topArticles} />
+                    <Article title="見出し" articles={props.topArticles} />
                 </div>
                 <div className={styles.aside}>
                     <div className="flex justify-center ">

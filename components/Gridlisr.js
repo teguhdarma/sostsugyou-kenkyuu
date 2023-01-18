@@ -55,18 +55,14 @@ function Gridlisr() {
           </p>
         </div>
       </Link>
-      <Link href="/goaltraker">
+      <Link href="/openai">
         <div class="p-10 flex flex-col items-center text-center group    md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
           <span class="p-5 rounded-full bg-teal-500 text-white shadow-lg shadow-teal-200">
-            <img
-              src="img/indexicon/checklist.png"
-              alt=""
-              className="w-10 h-10"
-            />
+            <img src="img/indexicon/ai.png" alt="" className="w-10 h-10" />
           </span>
-          <p class="text-xl font-medium text-slate-700 mt-3">チェックリスト</p>
+          <p class="text-xl font-medium text-slate-700 mt-3">AIに相談</p>
           <p class="mt-2 text-sm text-slate-500">
-            災害への予防がメインの【ディザプロ】アプリですが災害が起こってしまった場合の避難時に忘れ物がないようにするため
+            災害や火災についての身近な疑問に関わらず何でも答えてくれます。
           </p>
         </div>
       </Link>
@@ -79,9 +75,9 @@ function Gridlisr() {
               className="w-10 h-10"
             />
           </span>
-          <p class="text-xl font-medium text-slate-700 mt-3">インスタ</p>
+          <p class="text-xl font-medium text-slate-700 mt-3">SNS</p>
           <p class="mt-2 text-sm text-slate-500">
-            火事を未然に防ぐための知識をSNSを投稿を用いて
+            火事を未然に防ぐための知識をSNSに投稿をし
             拡散することでより多くの人に火事についての意識を変えてもらう
           </p>
         </div>

@@ -6,32 +6,32 @@ const TOPICS = [
     {
         icon: "01",
         path: "/news",
-        title: "Top stories",
+        title: "トップ記事",
     },
     {
         icon: "03",
         path: "/topics/business",
-        title: "Business",
+        title: "ビジネス",
     },
     {
         icon: "04",
         path: "/topics/technology",
-        title: "Technology",
+        title: "テクノロジー",
     },
     {
         icon: "05",
         path: "/topics/entertainment",
-        title: "Entertainment",
+        title: "エンタメ",
     },
     {
         icon: "06",
         path: "/topics/sports",
-        title: "Sports",
+        title: "スポーツ",
     },
     {
         icon: "07",
         path: "/topics/health",
-        title: "health",
+        title: "健康",
     },
 
 ];
