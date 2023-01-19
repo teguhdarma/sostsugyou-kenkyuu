@@ -57,8 +57,8 @@ function maps({ map, posts }) {
 
                     <div className="flex justify-between items-end ">
                       <p className="flex items-center">
-                        <p>{post.star}</p>
-                        sat
+                        <p>{post.category.title}</p>
+                        ための避難場所
                       </p>
 
                       <div>
@@ -96,6 +96,9 @@ export async function getServerSideProps(context) {
   mainImage2,
   location->{
       title,description,
+  },
+  category->{
+    title
   },
   fasilitas->{
     image,image1,image2,image3,image4,image5

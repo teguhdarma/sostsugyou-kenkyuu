@@ -32,8 +32,9 @@ const Home: NextPage = () => {
 
     return (
         <div className={styles.main}>
-            <div>何か書いてください</div>
-            <input value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
+            <div className='text-4xl mb-4'>何か書いてください</div>
+            <input type="text" placeholder={'start your search'} value={value} onChange={handleInput} onKeyDown={handleKeyDown} className="flex border border-purple-00 rounded" />
+
             <div>恐らく {prompt}</div>
             <div>返事： {completion.split('\n').map(item => <>{item}<br /></>)}</div>
         </div>
