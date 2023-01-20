@@ -32,6 +32,9 @@ const Home: NextPage = () => {
 
     return (
         <div className={styles.main}>
+            <div className="flex justify-center">
+                <img src="/img/indexicon/logo.png" alt="" />
+            </div>
             <div className='text-4xl mb-4'>何か書いてください</div>
             <input type="text" placeholder={'start your search'} value={value} onChange={handleInput} onKeyDown={handleKeyDown} className="flex border border-purple-00 rounded" />
 

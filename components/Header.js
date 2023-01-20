@@ -35,7 +35,7 @@ function Header({ placeholder }) {
     //     Search
     //   </button>
     // </div>
-    <div className="flex items-center flex justify-center mt-52  mb-5">
+    <div className="flex items-center flex justify-center mb5">
       <div className="flex border border-purple-200 rounded">
         <input
           value={searchInput}

@@ -5,8 +5,11 @@ import { sanityClient } from '../sanity';
 function Search({ category }) {
   return (
     <div>
+      <div className="flex justify-center">
+        <img src="/img/indexicon/logo.png" alt="" />
+      </div>
       <Header />
-      <h1 className="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h1 className="mb-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         category
       </h1>
       <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 scrollbar-hide">
